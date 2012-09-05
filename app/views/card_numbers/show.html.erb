@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Broj:</b>
+  <%= @card_number.number %>
+</p>
+
+
+<%= link_to 'Uredi', edit_card_number_path(@card_number) %> |
+<%= link_to 'Natrag', card_numbers_path %>

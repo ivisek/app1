@@ -1,0 +1,26 @@
+<h1>Pregled brojeva kartica</h1>
+
+<table>
+  <tr>
+    <th>Broj</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th>Tip kartice</th>
+  </tr>
+
+<% @card_numbers.each do |card_number| %>
+  <tr>
+    <td><%= card_number.number %></td>
+    <td><%= link_to 'Prikaži', card_number %></td>
+    <td><%= link_to 'Uredi', edit_card_number_path(card_number) %></td>
+    <td><%= link_to 'Briši', card_number, confirm: 'Jeste li sigurni?', method: :delete %></td>
+    <td><%= card_number.card_type %></td>
+
+ </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Unos novog broja kartice', new_card_number_path %>

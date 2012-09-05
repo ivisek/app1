@@ -1,0 +1,21 @@
+<%= form_for(@card_number) do |f| %>
+  <% if @card_number.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card_number.errors.count, "error") %> prohibited this card_number from being saved:</h2>
+
+      <ul>
+      <% @card_number.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+   <% end %>
+
+  <div class="field">
+    <%= f.label :number, "Broj" %><br />
+    <%= f.text_field :number %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Spremi u bazu" %>
+  </div>
+<% end %>
